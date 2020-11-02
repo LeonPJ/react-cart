@@ -1,24 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
-
+//import { Button } from 'semantic-ui-react';
+//import 'semantic-ui-css/semantic.min.css';
+import { 
+  Button,
+  Container,
+  Row,
+  Col,
+  Navbar,
+  Nav,
+  Form,
+  FormControl
+ } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container fluid="true">
+      <>
+        <Navbar bg="light" variant="light">
+          <Navbar.Brand href="#home">Home</Navbar.Brand>
+          <Nav className="mr-auto"></Nav>
+          <Form inline>
+            <Button variant="outline-primary">購物車</Button>
+          </Form>
+        </Navbar>
+      </>
+    </Container>
   );
 }
 
