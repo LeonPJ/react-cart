@@ -5,16 +5,22 @@ import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Alter from './components/alter';
 import Menu from './components/menu';
-import Commodity from './components/commodity';
+import {Product, List} from './components/product';
+import React from 'react';
 
-function App() {
+const App = () => {
+  //const Context = React.createContext();
   return (
     <Container fluid="true">
       <Alter />
       <Menu />
-      <Commodity />
+      <div className="productList">
+        <Product />
+      </div>
+      
+      <List />
     </Container>
   );
-}
+};
 
 export default App;
