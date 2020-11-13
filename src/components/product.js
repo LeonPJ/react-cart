@@ -1,16 +1,7 @@
 import React, { useState, useContext } from 'react';
-import {
-    Button,
-    Card,
-    Body,
-    Img,
-    ImgOverlay,
-    CardDeck,
-    CardGroup,
-    CardColumns
-   } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import '../index.css';
 /*const Product = () => {
     const [activeItem, setActiveItem] = React.useState('');
     const [products, setProducts] = React.useState([
@@ -81,36 +72,40 @@ const list = [
     },
 ];
 
-class Product extends React.Component{
-    render(){
-        return(
-            <>
+const handleAddCart = (title, price) => console.log(title);
+
+class Product extends React.Component {
+    render() {
+        return (
+            <div className="productList">
                 {
                     list.map(product => (
-                        <Card style={{ width: '18rem' }} className="productCard">
-                            <Card.Img variant="top" src={product.image} />
-                            <Card.Body>
-                                <Card.Title>{product.title}</Card.Title>
-                                <Card.Subtitle className="productPrice">$ {product.price}</Card.Subtitle>
-                                <Card.Text>{product.description}</Card.Text>
-                                <Button variant="success" size="lg" block>加入購物車</Button>
-                            </Card.Body>
-                        </Card>
+                        <div key={product.title}>
+                            <Card style={{ width: '18rem' }} className="productCard">
+                                <Card.Img variant="top" src={product.image} />
+                                <Card.Body>
+                                    <Card.Title>{product.title}</Card.Title>
+                                    <Card.Subtitle className="productPrice">$ {product.price}</Card.Subtitle>
+                                    <Card.Text>{product.description}</Card.Text>
+                                    <Button variant="success" onClick={() => handleAddCart(product.title, product.price)} block>加入購物車</Button>
+                                </Card.Body>
+                            </Card>
+                        </div>
                     ))
                 }
-            </>
+            </div>
         )
     }
 }
 
 
 const List = () => {
-    return(
+    return (
         <div>
             Hi this is List stage.
         </div>
     )
 }
 
-export {Product, List};
+export { Product, List };
 //export default Product;
