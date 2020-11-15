@@ -1,10 +1,15 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, Component } from 'react';
 import { Button, Navbar, Nav, Form } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Menu = () => {
-    const [carts, setCarts] = React.useState([{}]);
+    const [cart, setCart] = useState([]);
+    const addToCart = (product) => {
+        console.log("in add to cart!");
+        setCart([...cart, product]);
+    };
+
     return (
         <Navbar bg="light" variant="light">
             <Navbar.Brand>
@@ -13,12 +18,11 @@ const Menu = () => {
             <Nav className="mr-auto"></Nav>
             <Form inline>
                 <Button variant="outline-primary">
-                    <Link to='/cart'>購物車({carts.length})</Link>
+                    <Link to='/cart'>購物車({cart.length})</Link>
                 </Button>
             </Form>
         </Navbar>
     );
 };
-
 
 export default Menu;

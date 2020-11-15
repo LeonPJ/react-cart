@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
+//import { CartContext } from './CartContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+//const Context = React.createContext({ count: 1 });
 
 const Cart = () => {
+    //const msg = useContext(CartContext);
+    //console.log(msg);
+    //console.log(typeof (msg));
+
     return (
         <div>
-            Hi this is List stage.
+            <p>Hi this is Cart stage.</p>
+            <div>{ }</div>
         </div>
     )
 }
