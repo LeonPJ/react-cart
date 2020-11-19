@@ -51,16 +51,21 @@ const Product = () => {
     ]);
 
     const handleAddCart = (product) => {
-        setCart([...cart, product]);
+        setCart([...cart, { ...product }]);
+    };
+
+    const handleRemoveCart = (productRemove) => {
+        setCart(
+            cart.filter((product) => product !== productRemove)
+        );
     };
 
     const navigateTo = (nextPage) => {
         setPage(nextPage);
-    }
+    };
 
     const renderProduct = () => (
         <>
-
             <Button variant="outline-info" block onClick={() => navigateTo(pageCart)}>
                 購物車({cart.length})
             </Button>
@@ -81,31 +86,33 @@ const Product = () => {
     )
 
     const renderCart = () => (
-        <div className="shopList">
-            <Table striped bordered hover>
-                <thead>
+        <Table striped bordered hover>
+            <thead>
+                <tr>
+                    <th>名稱</th>
+                    <th>單價</th>
+                    <th></th>
+                </tr>
+            </thead>
+            {cart.map((product, idx) => (
+                <tbody key={idx}>
                     <tr>
-                        <th>名稱</th>
-                        <th>單價</th>
-                        <th></th>
+                        <td>{product.title}</td>
+                        <td>{product.price}</td>
+                        <td><Button variant="outline-danger" onClick={() => handleRemoveCart(product)} block>刪除</Button></td>
                     </tr>
-                </thead>
-                {cart.map((product, idx) => (
-
-                    <tbody key={idx}>
-                        <tr>
-                            <td>{product.title}</td>
-                            <td>{product.price}</td>
-                            <td><Button variant="outline-danger">刪除</Button></td>
-                        </tr>
-                    </tbody>
-
-                ))}
-                <td></td>
-                <td></td>
-                <td>總金額{ }</td>
-            </Table>
-        </div>
+                </tbody>
+            ))}
+            <td>總金額:
+                {
+                    cart.reduce((sum, cart) => {
+                        return sum + parseInt(cart.price)
+                    }, 0)
+                }
+            </td>
+            <td></td>
+            <td><Button variant="primary" disabled={!cart.length} block>結帳</Button></td>
+        </Table>
     );
 
     return (
