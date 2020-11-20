@@ -5,3 +5,6 @@
     * NPM v6.14.8
 
 * Bootstrap
+
+###commits
+    * 14 not separated function in react-cart/src/components/product.js/
