@@ -1,18 +1,14 @@
 import React, { useContext } from 'react';
-//import { CartContext } from './CartContext';
+import { Button } from 'react-bootstrap';
+import { CartContext } from './CartContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//const Context = React.createContext({ count: 1 });
 
 const Cart = () => {
-    //const msg = useContext(CartContext);
-    //console.log(msg);
-    //console.log(typeof (msg));
-
+    const [cart, setCart] = useContext(CartContext);
     return (
         <div>
-            <p>Hi this is Cart stage.</p>
-            <div>{ }</div>
-        </div>
+            <Button variant="outline-info" block>購物車({cart.length})</Button>
+        </div >
     )
 }
 

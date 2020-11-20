@@ -1,20 +1,36 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router } from 'react-router-dom'
 import Alter from './components/alter';
 import Menu from './components/menu';
-import Product from './components/product';
-import Cart from './components/cart';
-//import { CartContext } from './components/CartContext';
+//import ProductList from './components/productlist';
+//import Cart from './components/cart';
+//import CartList from './components/cartlist';
+import { CartProvider } from './components/CartContext';
+import Section from './components/section';
+
+/*const App = () => {
+  return (
+    <BrowserRouter>
+      <h1>Hello user</h1>
+      <CartProvider>
+        <Menu />
+        <Section />
+      </CartProvider>
+    </BrowserRouter>
+  );
+}*/
 
 const App = () => {
   return (
-    <Router>
-      <Menu />
-
-      <Route path='/' exact component={Product} />
-      <Route path='/cart' exact component={Cart} />
-
-    </Router>
+    <CartProvider>
+      <Router>
+        <div className="app">
+          <h1>Hello user</h1>
+          <Menu />
+          <Section />
+        </div>
+      </Router>
+    </CartProvider>
   );
 }
 
