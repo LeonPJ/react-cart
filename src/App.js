@@ -25,7 +25,6 @@ const App = () => {
     <CartProvider>
       <Router>
         <div className="app">
-          <h1>Hello user</h1>
           <Menu />
           <Section />
         </div>

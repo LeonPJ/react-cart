@@ -5,22 +5,11 @@ import { useCookies } from 'react-cookie';
 
 const Alter = () => {
     const [show, setShow] = useState(true);
-    const [cookies, setCookie] = useCookies(["freeShipping"]);
 
     function handleCookie() {
-        setCookie("freeShipping", "false", { 
-            path: "/" 
-        });
         setShow(false);
     }
 
-    function handleShow(){
-        //setShow(cookies.freeShipping);
-        console.log(typeof(cookies.freeShipping));
-        
-    }
-
-    //<Button onClick={() => setShow(false)} variant="outline-success">知道了</Button>
     return (
         <Alert show={show} variant="success">
             <p>歡迎來到線上商城，全館免運中!!</p>

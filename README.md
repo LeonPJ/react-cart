@@ -8,4 +8,4 @@
 * Bootstrap
 
 ### commits
-    * 14 not separated function in react-cart/src/components/product.js/
+    * v14 not separated function in react-cart/src/components/product.js/

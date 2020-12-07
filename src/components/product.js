@@ -6,6 +6,7 @@ import '../index.css';
 
 const Product = (props) => {
     const [cart, setCart] = useContext(CartContext);
+
     const handleAddCart = () => {
         const addCart = {
             title: props.title,
@@ -26,7 +27,7 @@ const Product = (props) => {
                     <Button variant="success" onClick={handleAddCart} block>加入購物車</Button>
                 </Card.Body>
             </Card>
-        </div>
+        </div >
     );
 };
 
