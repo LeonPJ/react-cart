@@ -6,8 +6,8 @@ import '../index.css';
 
 const Product = (props) => {
     const [cart, setCart] = useContext(CartContext);
-
     const handleAddCart = () => {
+
         const addCart = {
             title: props.title,
             price: props.price,
