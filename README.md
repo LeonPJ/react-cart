@@ -1,11 +1,8 @@
-# React 購物平台
+# React Cart
+This project can work on Windows OS, but can't work on IOS OS.
 
-## 版本
-    * Node.js v14.15.0
-    * NPM v6.14.8
-
-* React
-* Bootstrap
-
-### commits
-    * v14 not separated function in react-cart/src/components/product.js/
+## Quick Start
+```
+npm install
+npm start
+```
